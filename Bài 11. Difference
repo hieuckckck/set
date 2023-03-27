@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n;
+    int m;
+    cin>>n>>m;
+    map<int,int>se;
+    int a[n],b[m];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        se[a[i]]=1;
+    }
+    for(int i=0;i<m;i++){
+        cin>>b[i];
+        if(se[b[i]]==1){
+            se[b[i]]=2;
+        }
+    }
+   for(pair<int,int>x:se){
+       if(x.second==1){
+           cout<<x.first<<" ";
+       }
+   }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
