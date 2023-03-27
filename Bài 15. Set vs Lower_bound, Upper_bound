@@ -1,0 +1,89 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n;
+    cin>>n;
+    int a[n];multiset<int>ms;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        ms.insert(a[i]);
+    }
+    int t;
+    cin>>t;
+    while(t--){
+        int k;cin>>k;
+        int x;cin>>x;
+        if(k==1) ms.insert(x);
+        else if(k==2) {
+            auto it=ms.find(x);
+            if(it!=ms.end()){
+                ms.erase(it);
+            }
+        }
+        else if(k==3){
+            auto it=lower_bound(ms.begin(),ms.end(),x);
+            if(it!=ms.end()){
+                cout<<*it<<endl;
+            }
+            else cout<<"-1"<<endl;
+        }
+        else{
+            auto it =upper_bound(ms.begin(),ms.end(),x);
+            if(it !=ms.begin()){
+                it--;
+                cout<<*it<<endl;
+            }
+        }
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c2:
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll = long long;
+
+int main(){
+    multiset<int> ms;
+    int n; cin >> n;
+    for(int i = 0; i < n; i++){
+        int x; cin >> x;
+        ms.insert(x);
+    }
+    int q; cin >> q;
+    while(q--){
+        int tt, x; cin >> tt >> x;
+        if(tt == 1){
+            ms.insert(x);
+        }
+        else if(tt == 2){
+            auto it = ms.find(x);
+            if(it != ms.end()){
+                ms.erase(it);
+            }
+        }
+        else if(tt == 3){
+            auto it = lower_bound(ms.begin(), ms.end(), x); // ms.lower_bound(x)
+            if(it == ms.end()){
+                cout << "-1\n";
+            }
+            else{
+                cout << *it << endl;
+            }
+        }
+        else{
+            auto it = upper_bound(ms.begin(), ms.end(), x);
+            if(it != ms.begin()){
+                --it;
+                cout << *it << endl;
+            }
+        }
+    }
+}
