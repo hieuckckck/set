@@ -1,0 +1,81 @@
+c1:#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+   set<int>se;
+    int n;cin>>n;int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        se.insert(a[i]);
+    }
+    cout<<se.size()<<endl;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c2:
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n;
+    cin>>n;
+    int a[n];
+    map<int,int>se;
+    for(int i=0;i<n;i++){
+cin>>a[i];
+    se.insert({a[i],1});}
+    cout<<se.size();
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c3:
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+   set<int>se;
+    int n;cin>>n;
+    for(int i=0;i<n;i++){
+        int x;cin>>x;
+        se.insert(x);
+    }
+    cout<<se.size()<<endl;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c4:
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    map<int,int>mp;
+    int n;cin>>n;
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        mp[x]++;
+    }
+    cout<<mp.size()<<endl;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
